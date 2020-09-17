@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CSCI 232 F20-20200824T164037Z-001/CSCI 232 F20-20200824T164037Z-001.iml" filepath="$PROJECT_DIR$/CSCI 232 F20-20200824T164037Z-001/CSCI 232 F20-20200824T164037Z-001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyLinkedList-Project/MyLinkedList-Project.iml" filepath="$PROJECT_DIR$/MyLinkedList-Project/MyLinkedList-Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/csci232.iml" filepath="$PROJECT_DIR$/csci232.iml" />
+    </modules>
+  </component>
+</project>
