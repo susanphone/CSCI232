@@ -1,0 +1,34 @@
+Susan McCartney
+Output:
+
+----------------- First Fit -------------------------
+Total bins: 6
+Bin: 	 Capacity:50/50
+Bin: 	 Capacity:46/50
+Bin: 	 Capacity:43/50
+Bin: 	 Capacity:40/50
+Bin: 	 Capacity:41/50
+Bin: 	 Capacity:43/50
+----------------- Best Fit -------------------------
+Total bins: 6
+Bin: 	 Capacity:50/50
+Bin: 	 Capacity:50/50
+Bin: 	 Capacity:50/50
+Bin: 	 Capacity:43/50
+Bin: 	 Capacity:42/50
+Bin: 	 Capacity:28/50
+----------------- Worst Fit -------------------------
+Total bins: 6
+Bin: 	 Capacity:28/50
+Bin: 	 Capacity:42/50
+Bin: 	 Capacity:43/50
+Bin: 	 Capacity:50/50
+Bin: 	 Capacity:50/50
+Bin: 	 Capacity:50/50
+
+
+On average the strategy that works best is best fit decreasing. First fit works best when all items are close to
+capacity or if most items are a multiple of the capacity. And worst case works about as well as best fit, but
+worst case is not as good at fitting smaller items because the smaller items with take spots that could be used for
+bigger items. As opposed to best fit, which will try to fit the smaller items into almost full containers,
+but it would take longer for best fit to find an open bin for larger items on the list.
