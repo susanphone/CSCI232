@@ -6,7 +6,7 @@ public class Node {
     private Map<String, Integer> neighbors;
 
 public Node(String id, Map<String, Integer> neighbors) {
-    this.id = id;
+    //this.id = id;
     this.neighbors = neighbors;
 }
     // get the id of the node
