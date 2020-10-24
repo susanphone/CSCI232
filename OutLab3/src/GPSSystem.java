@@ -1,18 +1,25 @@
+/*
+Susan McCartney
+CSCI 232 - Lab 3
+October 23, 2020
+ */
+
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class GPSSystem {
 
     public static void main(String[] args) {
-        //File map = new File("/OutLab3/src/rome99.gr");
-        // File map2 = new File("/OutLab3/src/USA-road-d.NY.gr");
 
-        //open in map and split by space
+        // Create a new map for the nodes
+        Map<Integer, Node> nodeMap = new HashMap<>();
+        //TODO: Spencer needs to explain this when he is off work
+        Graph myGraph = new Graph(nodeMap);
 
+
+        // Scan content of file from command line argument
         Scanner input;
         try {
             input = new Scanner(new File(args[0]));
@@ -22,53 +29,67 @@ public class GPSSystem {
             return;
         }
 
-        List<Integer> jobList = new ArrayList<Integer>();
-
+        // Process list of nodes and determine total number of number and edges and their weights.
         while (input.hasNextLine()) {
             String line = input.nextLine();
-            String[] lineArray = line.split("\n");
-            int[] intLineArray = new int[lineArray.length];
-            for (int i = 0; i < lineArray.length; i++) {
-                //System.out.println(lineArray[i]);
-                // new list for each line
-                if (lineArray[i] == "p") {
-                    System.out.println("This is a p line");
+            String[] nodeList = line.split(" ");
+            System.out.println(nodeList[0]);
+
+
+            // Find the total number of nodes and edges
+            if (nodeList[0].startsWith("p")) {
+                int vertexCount = Integer.parseInt(nodeList[2]);
+
+                for (int nodeID = 1; nodeID < vertexCount + 1; nodeID++) {
+                    nodeMap.put(nodeID, new Node(nodeID));
                 }
-                if (lineArray[i] == "a") {
-                    System.out.println("This is a node set");
-                }
-                // return;
+                myGraph = new Graph(nodeMap);
+                continue;
             }
 
+            // Find all the different nodes and add the weights to the edges for the neighboring nodes.
+            if (nodeList[0].startsWith("a")) {
+                int startNode = Integer.parseInt(nodeList[1]);
+                int endNode = Integer.parseInt(nodeList[2]);
+                int weight = Integer.parseInt(nodeList[3]);
+                myGraph.addEdge(startNode, endNode, weight);
             }
 
-            //for (int i : itemList) {
-            // String line[] = i.split(" ");
-            // get total vertices and edges for graph
-            //if (line[0] == "p") {
-            //    int totalVertices = line[2];
-            //    int totalEdges = line[3];
-            //    Graph totalNodes = new Graph(totalVertices, totalEdges);
-            // }
-            // generate nodes from the information on each line
-            //if (line[0] == "a") {
-            //    Node node = new Node();
-            //  }
-            // }
-            //}
-            // get user input for source and destination
-            //Scanner source = new Scanner("Please enter source:  ");
-            //Scanner destination = new Scanner("Please enter your destination: ");
+            // get user input for source
+            Scanner inputSource = new Scanner(System.in);
+            String source;
+            System.out.println("Please enter source: ");
+            source = inputSource.next();
 
-            // calculate the shortest path from source to destination and print the path.
-            //Graph G = new Graph(int(source), int(destination));
-            //System.out.println("Shortest path from " + source + " to " + destination + ":\n");
-            //for (i = 0; i < path.length(); i++) {
-            //    System.out.println( i + " -> ");
-            // }
-            // print the total distance and time to find the path
-            //System.out.println("total distance: " + relaxedWeight);
-            System.out.println("time to find: " + System.currentTimeMillis());
+            // scan user input for destination
+            Scanner inputDestination = new Scanner(System.in);
+            String destination;
+            System.out.println("Please enter your destination: ");
+            destination = inputDestination.next();
+
+            System.out.println("Shortest path from " + source + " to " + destination + ":\n");
+
+            // TODO: initiate Dijkstra's algorithm to find the shortest path
+            myGraph.algoDijkstra(Integer.parseInt(source), Integer.parseInt(destination));
+
+
+            // TODO: print out each node ID that was used to create the path
+            for (int i = Integer.parseInt(source); i < nodeList.length ; i++) {
+                System.out.print( i + " -> " );
+             }
+            System.out.print(destination);
+            System.out.println("\n");
+            // TODO: print the total distance and time to find the path in sec
+            System.out.println("total distance: " + "weight");
+            long time = 0;
+            time = System.currentTimeMillis();
+            System.out.println("time to find: " + time/1000);
+            return;
         }
 
+        // TODO: Plot the shortest path on a window.
+        // NYC: Long [40.3; 41.3]
+        //      Lat  [73.5; 74.5]
+
     }
+}
