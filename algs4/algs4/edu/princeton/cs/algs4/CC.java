@@ -31,35 +31,7 @@
 
 package edu.princeton.cs.algs4;
 
-/**
- *  The {@code CC} class represents a data type for 
- *  determining the connected components in an undirected graph.
- *  The <em>id</em> operation determines in which connected component
- *  a given vertex lies; the <em>connected</em> operation
- *  determines whether two vertices are in the same connected component;
- *  the <em>count</em> operation determines the number of connected
- *  components; and the <em>size</em> operation determines the number
- *  of vertices in the connect component containing a given vertex.
 
- *  The <em>component identifier</em> of a connected component is one of the
- *  vertices in the connected component: two vertices have the same component
- *  identifier if and only if they are in the same connected component.
-
- *  <p>
- *  This implementation uses depth-first search.
- *  The constructor takes &Theta;(<em>V</em> + <em>E</em>) time,
- *  where <em>V</em> is the number of vertices and <em>E</em> is the
- *  number of edges.
- *  Each instance method takes &Theta;(1) time.
- *  It uses &Theta;(<em>V</em>) extra space (not including the graph).
- *  <p>
- *  For additional documentation, see 
- *  <a href="https://algs4.cs.princeton.edu/41graph">Section 4.1</a>   
- *  of <em>Algorithms, 4th Edition</em> by Robert Sedgewick and Kevin Wayne.
- *
- *  @author Robert Sedgewick
- *  @author Kevin Wayne
- */
 public class CC {
     private boolean[] marked;   // marked[v] = has vertex v been marked?
     private int[] id;           // id[v] = id of connected component containing v
@@ -235,26 +207,4 @@ public class CC {
     }
 }
 
-/******************************************************************************
- *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
- *
- *  This file is part of algs4.jar, which accompanies the textbook
- *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
- *
- *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
- ******************************************************************************/
+
