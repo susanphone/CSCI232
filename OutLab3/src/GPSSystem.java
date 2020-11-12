@@ -55,6 +55,7 @@ public class GPSSystem {
                 myGraph.addEdge(startNode, endNode, weight);
             }
 
+
             // get user input for source
             Scanner inputSource = new Scanner(System.in);
             String source;

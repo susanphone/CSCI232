@@ -11,10 +11,9 @@ public class Node {
     private int id;
 
     // Neighbor id to connection weight
-    private Map<Integer, Integer> neighbors;
+    private static Map<Integer, Integer> neighbors;
 
     private boolean isMarked;
-
 
 
     public Node(int id) {
@@ -28,7 +27,7 @@ public class Node {
     }
 
     // get all the neighbors of a specific node
-    public Map<Integer, Integer> getNeighbors() {
+    public static Map<Integer, Integer> getNeighbors() {
         return neighbors;
     }
 
