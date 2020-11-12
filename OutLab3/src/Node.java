@@ -13,13 +13,13 @@ public class Node {
     // Neighbor id to connection weight
     private Map<Integer, Integer> neighbors;
 
-    private boolean marked;
+    private boolean isMarked;
 
 
 
     public Node(int id) {
         this.id = id;
-        this.marked = false;
+        this.isMarked = false;
     }
 
     // get the id of the node
@@ -34,12 +34,12 @@ public class Node {
 
     // mark the node that has been visited
     public void setMarked(boolean marked) {
-        this.marked = marked;
+        this.isMarked = marked;
     }
 
     // check to see if a node has been visited
     public boolean isMarked() {
-        return marked;
+        return isMarked;
     }
 
     // add a connection between two nodes
